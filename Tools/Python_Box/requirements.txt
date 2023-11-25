@@ -1,1 +1,4 @@
+termcolor
+cprint
+pycryptodomex
 requests
