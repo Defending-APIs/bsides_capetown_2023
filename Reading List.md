@@ -1,3 +1,3 @@
 # Reading List
 
-TBD
+TB
