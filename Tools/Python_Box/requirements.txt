@@ -2,3 +2,6 @@ termcolor
 cprint
 pycryptodomex
 requests
+fastapi 
+uvicorn 
+oauthlib

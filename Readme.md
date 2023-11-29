@@ -1,2 +1,11 @@
-# bsides_capetown_2023
-Repository for BSides Cape Town 2023
+# BSides Cape Town 2023
+
+## About
+
+## Course Outline
+
+## Prerequisites
+
+## Reading list
+
+## Getting in touch

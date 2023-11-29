@@ -1,2 +1,7 @@
 Tools/Python_Box/.vscode/launch.json
 Tools/Python_Box/.vscode/tasks.json
+.vscode/settings.json
+Sample APIs/Pixi with Firewall/logs/
+app/__pycache__/
+WIP/
+Lessons/Authorization/__pycache__/
