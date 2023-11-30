@@ -1,4 +1,4 @@
-# API gateways
+# API Gateways
 In this lesson, you will learn about the Kong API gateway and how to use it to secure your APIs. You will install Kong locally in Docker, create routes and services, and use plugins to secure the APIs.
 
 ## Setup
