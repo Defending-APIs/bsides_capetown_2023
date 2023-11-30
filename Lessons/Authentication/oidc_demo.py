@@ -14,6 +14,7 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 app = FastAPI()
 
 # Google OAuth 2.0 information
+# TODO Fix this rather unfortunate Git commit by revoking and re-issuing these, and using 1Password
 GOOGLE_CLIENT_ID = "55590460044-t2q069rbrgjrs0l3hejkclpquuomco2e.apps.googleusercontent.com"
 GOOGLE_CLIENT_SECRET = "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"
 GOOGLE_DISCOVERY_URL = (
@@ -82,6 +83,7 @@ async def callback(request: Request):
     client.parse_request_body_response(json.dumps(token_response.json()))
 
     # Now you can use these tokens to access Google APIs or OIDC
+    # TODO Decode the token and pretty it up
     return {"token": token_response.json()}
 
 if __name__ == "__main__":
