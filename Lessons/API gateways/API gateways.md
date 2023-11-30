@@ -102,6 +102,6 @@ The following are suggested in order of difficulty:
 * [Basic Authentication](https://docs.konghq.com/hub/kong-inc/basic-auth/)
 * [JWT](https://docs.konghq.com/hub/kong-inc/jwt/) - a free t-shirt to the first person to get this working!
 
-## Further reading
+## Further Reading
 * [Kong documentation](https://docs.konghq.com/gateway/3.5.x/)
 * [Kong Hub](https://docs.konghq.com/hub/?)
