@@ -21,3 +21,5 @@ Use the [jwt_tool.py](./jwt_tools.py) script to generate and verify JWTs. Try ad
 * [OAuth2 playground](https://www.oauth.com/playground/index.html)
 * [OIDC playground](https://openidconnect.net/)
 * [JWT io](https://jwt.io/)
+* [Introduction to OAuth 2.0 and OpenID Connect](https://pragmaticwebsecurity.com/talks/introductionoauth)
+* [Philippe De Ryck's cheat sheets](https://pragmaticwebsecurity.com/cheatsheets.html)
