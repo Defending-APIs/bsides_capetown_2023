@@ -2,7 +2,9 @@ from fastapi import Depends, FastAPI, HTTPException, status, Request, Response
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from starlette.responses import PlainTextResponse, RedirectResponse
 from pydantic import BaseModel
+import casbin
 import uvicorn
+import os 
 
 from utils import ItemsDAO, UsersDAO, UserInDB, User
 from utils import Item
@@ -24,7 +26,6 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         )
     return user
 
-
 async def get_current_active_user(curr_user: User = Depends(get_current_user)):
     if curr_user.disabled:
         raise HTTPException(
@@ -32,6 +33,17 @@ async def get_current_active_user(curr_user: User = Depends(get_current_user)):
             detail="Inactive user")
     return curr_user
 
+async def get_current_user_authorization(req: Request, curr_user: User = Depends(get_current_active_user)):
+    # TODO: Fix this mess with a relative path - must be run from root of repository 
+    e = casbin.Enforcer("./Lessons/Authorization/model.conf", "./Lessons/Authorization/policy.csv")
+    sub = curr_user.username
+    obj = req.url.path
+    act = req.method
+    if not(e.enforce(sub, obj, act)):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Method not authorized for this user")
+    return curr_user
 
 @app.post("/token")
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
